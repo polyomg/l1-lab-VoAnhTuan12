@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Send Mail</title>
+</head>
+<body>
+<h2>Send Mail</h2>
+<p th:text="${message}"></p>
+<form action="/mail/send" method="post" enctype="multipart/form-data">
+    From: <input name="from" value="WebShop &lt;web-shop@gmail.com&gt;"><br>
+    To: <input name="to"><br>
+    Cc: <input name="cc"><br>
+    Bcc: <input name="bcc"><br>
+    Subject: <input name="subject"><br>
+    Body: <textarea name="body"></textarea><br>
+    File: <input type="file" name="file"><br>
+    <button type="submit">Push to queue</button>
+</form>
+</body>
+</html>
